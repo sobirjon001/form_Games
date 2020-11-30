@@ -59,11 +59,10 @@ public class GamePanel extends JPanel implements ActionListener {
       for (int i = 0; i < bodyParts; i++) {
         if (i == 0) {
           g.setColor(Color.green);
-          g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
         } else {
           g.setColor(new Color(45, 180, 0));
-          g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
         }
+        g.fillRect(x[i], y[i], UNIT_SIZE, UNIT_SIZE);
       }
       g.setColor(Color.red);
       g.setFont(new Font("Ink Free", Font.BOLD, 40));
@@ -75,8 +74,8 @@ public class GamePanel extends JPanel implements ActionListener {
   }
 
   public void newApple() {
-    appleX = random.nextInt((int) (SCREEN_WIDTH / UNIT_SIZE)) * UNIT_SIZE;
-    appleY = random.nextInt((int) (SCREEN_HEIGHT / UNIT_SIZE)) * UNIT_SIZE;
+    appleX = random.nextInt(SCREEN_WIDTH / UNIT_SIZE) * UNIT_SIZE;
+    appleY = random.nextInt(SCREEN_HEIGHT / UNIT_SIZE) * UNIT_SIZE;
   }
 
   public void newSnake(){
