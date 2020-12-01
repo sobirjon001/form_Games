@@ -38,6 +38,7 @@ public class GamePanel extends JPanel implements ActionListener {
     newApple();
     newSnake();
     running = true;
+
     timer = new Timer(DELAY, this);
     timer.start();
   }
@@ -149,7 +150,6 @@ public class GamePanel extends JPanel implements ActionListener {
     // checks if head collides with border
 
     if (!(!(x[0] < 0) && x[0] < SCREEN_WIDTH && !(y[0] < 0) && y[0] < SCREEN_HEIGHT)) {
-      System.out.println("step");
       running = false;
     }
 
@@ -175,7 +175,6 @@ public class GamePanel extends JPanel implements ActionListener {
 
   @Override
   public void actionPerformed(ActionEvent e) {
-    System.out.println(e.toString());
     if (running) {
       move();
       checkApple();
