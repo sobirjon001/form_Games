@@ -7,6 +7,7 @@ import java.util.Random;
 
 public class GamePanel extends JPanel implements ActionListener {
 
+
   // ********* Global Variables:
   static final int SCREEN_WIDTH = 600;
   static final int SCREEN_HEIGHT = 600;
@@ -38,10 +39,10 @@ public class GamePanel extends JPanel implements ActionListener {
     newApple();
     newSnake();
     running = true;
-
     timer = new Timer(DELAY, this);
     timer.start();
   }
+
 
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
@@ -148,7 +149,6 @@ public class GamePanel extends JPanel implements ActionListener {
       }
     }
     // checks if head collides with border
-
     if (!(!(x[0] < 0) && x[0] < SCREEN_WIDTH && !(y[0] < 0) && y[0] < SCREEN_HEIGHT)) {
       running = false;
     }
@@ -156,8 +156,6 @@ public class GamePanel extends JPanel implements ActionListener {
     if (!running) {
       timer.stop();
     }
-
-
   }
 
   public void gameOver(Graphics g) {
@@ -182,6 +180,7 @@ public class GamePanel extends JPanel implements ActionListener {
     }
     repaint();
   }
+
 
   public class MyKeyAdapter extends KeyAdapter {
     @Override
@@ -219,5 +218,4 @@ public class GamePanel extends JPanel implements ActionListener {
       }
     }
   }
-  //test
 }
